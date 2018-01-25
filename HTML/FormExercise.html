@@ -8,127 +8,126 @@
 </head>
 
 <body>
-
-      <form method="get" action="../utilities/showFormParameters.html">
+  <form method="get" action="../utilities/showFormParameters.html">
+    <fieldset>
+      <legend><h2>A big form example</h3></legend>
         <fieldset>
-          <legend><h2>A big form example</h3></legend>
+          <legend><h3> These are the most common input types</h3></legend>
+
+          <p>
             <fieldset>
-              <legend><h3> These are the most common input types</h3></legend>
-
-              <p>
-                <fieldset>
-                  <legend>Textbox:</legend>
-                  <label>Box One: <input name="selectedTextBoxOne" type="text" placeholder="Placeholder disappears when you start typing" size="40" maxlength="20"></label>
-                  <br><br>
-                  <label>Box Two: <input name="selectedTextBoxTwo" type="text" value="value attribute used to default the contents" size="40" maxlength="50"></label>
-                  <br><br>
-                  Common textbox input attributes - placeholder, value, size, and maxlength
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Password:</legend>
-                  <input name="selectedPassword" type="password" maxlength="5">
-                  <br>Common password input attributes - size, and maxlength
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Textarea:</legend>
-                  <textarea name="selectedTextArea" type="textarea" rows="5" cols="30"></textarea>
-                  <br>Common textarea input attributes - cols, rows, placeholder
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Dropdown (aka Select/option):</legend>
-                  <select name="selectedRating">
-                    <option>Red</option>
-                    <option selected>Blue</option>
-                    <option>Green</option>
-                  </select>
-                  <br>Common select/option input attribute - selected
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Pick a Radio Button: </legend>
-                  <label>Button One:
-                    <input name="selectedRadioButton" type="radio" value="button-one">
-                  </label>
-                  <label>Button Two:
-                    <input name="selectedRadioButton" type="radio" value="button-two">
-                  </label>
-                  <label>Button Three:
-                    <input checked name="selectedRadioButton" type="radio" value="button-three">
-                  </label>
-                  <label>Button Four:
-                    <input name="selectedRadioButton" type="radio" value="button-four">
-                  </label>
-                  <br><br>Common radio input attributes - checked
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Check Some Boxes:</legend>
-                  <label>Box One:
-                    <input name="selectedCheckBox" type="checkbox" value="box-one">
-                  </label>
-                  <label>Box Two:
-                    <input name="selectedCheckBox" type="checkbox" value="box-two">
-                  </label>
-                  <label>Box Three:
-                    <input checked name="selectedCheckBox" type="checkbox" value="box-three">
-                  </label>
-                  <label>Box Four:
-                    <input name="selectedCheckBox" type="checkbox" value="box-four">
-                  </label>
-                  <br><br>Common checkbox input attributes - checked
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Hidden Fields</legend>
-                  <input name="hiddenValueOne" type="hidden" value="Hidden Values are only seen after submit">
-                </fieldset>
-              </p>
+              <legend>Textbox:</legend>
+              <label>Box One: <input name="selectedTextBoxOne" type="text" placeholder="Placeholder disappears when you start typing" size="40" maxlength="20"></label>
+              <br><br>
+              <label>Box Two: <input name="selectedTextBoxTwo" type="text" value="value attribute used to default the contents" size="40" maxlength="50"></label>
+              <br><br>
+              Common textbox input attributes - placeholder, value, size, and maxlength
             </fieldset>
-          </div>
-          <div class="right-column">
+          </p>
 
+          <p>
             <fieldset>
-              <legend><h3> These are some newer types and may not be supported on older browsers </h3></legend>
-              <p>
-                <fieldset>
-                  <legend>Date:</legend>
-                  <input name="selectedDate" type="date">
-                  (yyyy-mm-dd)
-                </fieldset>
-              </p>
-
-              <p>
-                <fieldset>
-                  <legend>Color:</legend>
-                  <input name="selectedColor" type="color">
-                  (Hexadecimal code such as #add8e6)
-                </fieldset>
-              </p>
+              <legend>Password:</legend>
+              <input name="selectedPassword" type="password" maxlength="5">
+              <br>Common password input attributes - size, and maxlength
             </fieldset>
+          </p>
 
-            <p>
-              <fieldset>
-                <legend>Submit or reset</legend>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Reset">
-              </fieldset>
-            </p>
+          <p>
+            <fieldset>
+              <legend>Textarea:</legend>
+              <textarea name="selectedTextArea" type="textarea" rows="5" cols="30"></textarea>
+              <br>Common textarea input attributes - cols, rows, placeholder
+            </fieldset>
+          </p>
+
+          <p>
+            <fieldset>
+              <legend>Dropdown (aka Select/option):</legend>
+              <select name="selectedRating">
+                <option>Red</option>
+                <option selected>Blue</option>
+                <option>Green</option>
+              </select>
+              <br>Common select/option input attribute - selected
+            </fieldset>
+          </p>
+
+          <p>
+            <fieldset>
+              <legend>Pick a Radio Button: </legend>
+              <label>Button One:
+                <input name="selectedRadioButton" type="radio" value="button-one">
+              </label>
+              <label>Button Two:
+                <input name="selectedRadioButton" type="radio" value="button-two">
+              </label>
+              <label>Button Three:
+                <input checked name="selectedRadioButton" type="radio" value="button-three">
+              </label>
+              <label>Button Four:
+                <input name="selectedRadioButton" type="radio" value="button-four">
+              </label>
+              <br><br>Common radio input attributes - checked
+            </fieldset>
+          </p>
+
+          <p>
+            <fieldset>
+              <legend>Check Some Boxes:</legend>
+              <label>Box One:
+                <input name="selectedCheckBox" type="checkbox" value="box-one">
+              </label>
+              <label>Box Two:
+                <input name="selectedCheckBox" type="checkbox" value="box-two">
+              </label>
+              <label>Box Three:
+                <input checked name="selectedCheckBox" type="checkbox" value="box-three">
+              </label>
+              <label>Box Four:
+                <input name="selectedCheckBox" type="checkbox" value="box-four">
+              </label>
+              <br><br>Common checkbox input attributes - checked
+            </fieldset>
+          </p>
+
+          <p>
+            <fieldset>
+              <legend>Hidden Fields</legend>
+              <input name="hiddenValueOne" type="hidden" value="Hidden Values are only seen after submit">
+            </fieldset>
+          </p>
+        </fieldset>
+      </div>
+      <div class="right-column">
+
+        <fieldset>
+          <legend><h3> These are some newer types and may not be supported on older browsers </h3></legend>
+          <p>
+            <fieldset>
+              <legend>Date:</legend>
+              <input name="selectedDate" type="date">
+              (yyyy-mm-dd)
+            </fieldset>
+          </p>
+
+          <p>
+            <fieldset>
+              <legend>Color:</legend>
+              <input name="selectedColor" type="color">
+              (Hexadecimal code such as #add8e6)
+            </fieldset>
+          </p>
+        </fieldset>
+
+        <p>
+          <fieldset>
+            <legend>Submit or reset</legend>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
           </fieldset>
-        </form>
+        </p>
+      </fieldset>
+    </form>
   </body>
   </html>
