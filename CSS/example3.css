@@ -1,7 +1,17 @@
-table, tr, th, td {
-  border: solid 1px black;
+
+body {
+  font-family: 'Ubuntu', sans-serif;
 }
 
+table {
+  width: 75%;
+  margin:auto;
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background-color: #737373;
+}
 .outerwrapper {
   width: 70%;
   margin:auto;
@@ -9,6 +19,7 @@ table, tr, th, td {
 
 .header {
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .header h2 {
@@ -17,11 +28,58 @@ table, tr, th, td {
 
 .rounddiv {
   width:35px;
+  margin: auto;
   height: 35px;
   border: solid 1px black;
   border-radius: 20px;
 }
 
-.red {
-  background-color: red;
+.innertitle {
+  font-weight: bolder;
+}
+
+.secondline {
+  font-weight: lighter;
+  font-size: .8em;
+}
+
+.centered {
+    text-align: center;
+}
+
+.headerrow {
+  background-color: lightgray;
+}
+
+.even {
+  background-color: #ececec;
+}
+
+.gold {
+  background-color: #ffd700;
+}
+
+.silver {
+  background-color: rgb(192,192,192);
+}
+
+.bronze {
+  background-color: rgba(205,127,50,1)
+}
+
+.rhodium {
+  background-color: #d2d2d2;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.backbutton {
+  color: blue;
+  border: solid 2px blue;
+  width: 120px;
+  font-size: 1.25em;
+  border-radius: 20px;
 }

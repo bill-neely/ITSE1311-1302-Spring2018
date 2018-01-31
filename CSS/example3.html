@@ -5,6 +5,7 @@
 <head>
   <title>This is a table example</title>
   <link rel="stylesheet" type="text/css" href="example3.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 
 <body>
@@ -14,19 +15,44 @@
     <img src="#">
   </div>
   <table>
-    <tr>
+    <tr class="headerrow">
       <th></td>
       <th>Award</td>
       <th>This Track</td>
       <th>All Time</td>
     </tr>
-    <tr>
-      <td><div class="rounddiv red"><div></td>
-      <td>Golden Star<br>90-100% correct</td>
-      <td>8</td>
-      <td>10</td>
+    <tr class="odd">
+      <td><div class="rounddiv gold"><div></td>
+      <td><span class="innertitle">Golden Star</span><br>
+        <span class="secondline">90-100% correct</span></td>
+      <td class="centered">8</td>
+      <td class="centered">10</td>
+    </tr>
+    <tr class="even">
+      <td><div class="rounddiv silver"><div></td>
+      <td><span class="innertitle">Silver Star</span><br>
+        <span class="secondline">80-90% correct</span></td>
+      <td class="centered">0</td>
+      <td class="centered">0</td>
+    </tr>
+    <tr class="odd">
+      <td><div class="rounddiv bronze"><div></td>
+      <td><span class="innertitle">Bronze Star</span><br>
+        <span class="secondline">70-80% correct</span></td>
+      <td class="centered">2</td>
+      <td class="centered">2</td>
+    </tr>
+    <tr class="even">
+      <td><div class="rounddiv rhodium"><div></td>
+      <td><span class="innertitle">Rhodium Star</span><br>
+        <span class="secondline">60-70% correct</span></td>
+      <td class="centered">3</td>
+      <td class="centered">4</td>
     </tr>
   </table>
+  <div class="footer">
+    <button class="backbutton">&lt;&nbsp;&nbsp;&nbsp;Back</button>
+  </div>
 </div>
 
 
