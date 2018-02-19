@@ -1,0 +1,67 @@
+body {
+  color: #151E58;
+}
+
+.hide {
+  display: none;
+}
+
+select {
+  background-color: rgba(214, 228, 240, .5);
+  color: black;
+  font-size: 1.1em;
+  padding: 5px 15px;
+}
+
+.wrapper {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+#reportCard {
+  border: solid 1px #151E58;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.topOfCard div {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+.studentInfo  {
+  width: 75%;
+  font-size: 1.5em;
+}
+
+.studentImage img {
+  width: 75px;
+}
+
+.courseList table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.courseList th {
+  background-color: lightgray;
+}
+
+.courseList td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.courseList tr:hover {
+  background-color: whitesmoke;
+}
+
+#idNumber {
+  padding-left: 20px;
+  text-align: left;
+  font-size: .8em;
+}

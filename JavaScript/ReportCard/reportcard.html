@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Dynamic Report Cards</title>
+  <link rel="stylesheet" type="text/css" href="reportcard.css">
+  <script src="reportcard.js"></script>
+  <script src="studentData.js"></script>
+</head>
+
+<body onload="setup()">
+  <div class="wrapper">
+    <select id="studentSelector" onchange="chooseStudent()">
+      <option value="" selected>Please choose a student</option>
+    </select>
+
+    <div id="reportCard" class="hide">
+      <div class="topOfCard">
+        <div class="studentInfo">
+          <label id="name"></label><br>
+          <label id="street"></label><br>
+          <label id="city"></label><br>
+        </div>
+        <div class="studentImage">
+          <img id="avatar">
+        </div>
+      </div>
+      <div class="courseList">
+        <table>
+          <tr>
+            <th>Course</th>
+            <th>Instructor</th>
+            <th>Term 1</th>
+            <th>Term 2</th>
+            <th>Term 3</th>
+            <th>Term 4</th>
+            <th>Average</th>
+          </tr>
+          <tbody id="courseRows">
+          </tbody>
+        </table>
+      </div>
+      <div id="idNumber">
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
