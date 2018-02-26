@@ -19,7 +19,31 @@ body {
   width: 50px;
 }
 
+#roll {
+  background-color: #258ac4;
+  color: white;
+  padding: 7px;
+  font-size: 1.05em;
+  border-radius: 5px;
+}
+
 .saved {
   border: solid 3px green;
   border-radius: 10px;
+}
+
+table, tr, td {
+  border: solid 1px white;
+  background-color: #258ac4;
+  color: white;
+  border-collapse: collapse;
+}
+
+table {
+  margin: auto;
+}
+
+#scoreCard {
+  width: 500px;
+  margin: auto;
 }
