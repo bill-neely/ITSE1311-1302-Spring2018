@@ -47,3 +47,17 @@ table {
   width: 500px;
   margin: auto;
 }
+
+.unscored {
+  background-color: yellow;
+  color: black;
+}
+
+.unscored:hover {
+  cursor: pointer;
+}
+
+.totals {
+  background-color: black;
+  color: white;
+}

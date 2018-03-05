@@ -34,8 +34,8 @@ yahtzee = {
       'displaySequence' : 1,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : 'notSureYet',
-      'scoreMath' : 'sumOfOnes'
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 1]
     },
     {
       'title' : 'Twos',
@@ -43,8 +43,8 @@ yahtzee = {
       'displaySequence' : 2,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : 'notSureYet',
-      'scoreMath' : 'sumofTwos'
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 2]
     },
     {
       'title' : 'Threes',
@@ -52,8 +52,35 @@ yahtzee = {
       'displaySequence' : 3,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : 'notSureYet',
-      'scoreMath' : 'sumofThrees'
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 3]
+    },
+    {
+      'title' : 'Fours',
+      'top' : true,
+      'displaySequence' : 3,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 4]
+    },
+    {
+      'title' : 'Fives',
+      'top' : true,
+      'displaySequence' : 3,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 5]
+    },
+    {
+      'title' : 'Sixes',
+      'top' : true,
+      'displaySequence' : 3,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 6]
     },
     {
       'title' : 'Three of a Kind',
@@ -61,8 +88,8 @@ yahtzee = {
       'displaySequence' : 7,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : 'notSureYet',
-      'scoreMath' : 'sumofDice'
+      'scoreCondition' : ['ofAKind', 3],
+      'scoreMath' : ['sum', 0]
     },
     {
       'title' : 'Four of a Kind',
@@ -70,8 +97,53 @@ yahtzee = {
       'displaySequence' : 8,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : 'notSureYet',
-      'scoreMath' : 'sumofDice'
+      'scoreCondition' : ['ofAKind', 4],
+      'scoreMath' : ['sum', 0]
+    },
+    {
+      'title' : 'Full House',
+      'top' : false,
+      'displaySequence' : 8,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['ofAKind', 2, 3],
+      'scoreMath' : ['const', 25]
+    },
+    {
+      'title' : 'Small Straight',
+      'top' : false,
+      'displaySequence' : 8,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['inARow', 4],
+      'scoreMath' : ['const', 30]
+    },
+    {
+      'title' : 'Large Straight',
+      'top' : false,
+      'displaySequence' : 8,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['inARow', 5],
+      'scoreMath' : ['const', 40]
+    },
+    {
+      'title' : 'Chance',
+      'top' : false,
+      'displaySequence' : 8,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['none'],
+      'scoreMath' : ['sum', 0]
+    },
+    {
+      'title' : 'Yahtzee',
+      'top' : false,
+      'displaySequence' : 8,
+      'scoreRecorded' : false,
+      'score' : 0,
+      'scoreCondition' : ['ofAKind', 5],
+      'scoreMath' : ['const', 50]
     }
   ]
 }
