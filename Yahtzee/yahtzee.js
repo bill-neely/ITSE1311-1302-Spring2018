@@ -1,7 +1,19 @@
+var newGameObject = "";
+
 function setup() {
+  if (newGameObject == "") {
+    newGameObject = JSON.stringify(yahtzee);
+  }
+  document.getElementById('newGame').style.display = 'none';
+  document.getElementById('roll').style.display = 'inline-block';
   loadPlayerInfo();
   loadDice();
   loadScorecard();
+}
+
+function newGame() {
+    yahtzee = JSON.parse(newGameObject);
+    setup();
 }
 
 function loadPlayerInfo() {
@@ -32,14 +44,14 @@ function loadScorecard() {
       buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? "scored" : "unscored"), !scoreCardRow.scoreRecorded, index);
     }
   });
-  buildScoreCardRow("Top Subtotal:", " ", "totals", false, 0);
-  buildScoreCardRow("Top Bonus:", " ", "totals", false, 0);
+  buildScoreCardRow("Top Subtotal:", yahtzee.topSubTotal, "totals", false, 0);
+  buildScoreCardRow("Top Bonus:", yahtzee.topBonus, "totals", false, 0);
   yahtzee.scoreCard.forEach(function(scoreCardRow, index) {
     if (!scoreCardRow.top) {
       buildScoreCardRow(scoreCardRow.title, scoreCardRow.score, (scoreCardRow.scoreRecorded ? "scored" : "unscored"), !scoreCardRow.scoreRecorded, index);
     }
   });
-  buildScoreCardRow("Total Score:", " ", "totals", false, 0);
+  buildScoreCardRow("Total Score:", yahtzee.totalScore, "totals", false, 0);
 }
 
 function buildScoreCardRow(title, score, columnClassName, clickable, scorecardIndex) {
@@ -64,11 +76,19 @@ function saveScore() {
     yahtzee.scoreCard[index].scoreRecorded = true;
     loadScorecard();
     yahtzee.throwsRemainingInTurn = 3;
+    yahtzee.turnsRemaining--;
     yahtzee.dice.forEach(function (die) {
       die.sideUp = 0;
       die.saved = false;
     });
     loadDice();
+  }
+  if (yahtzee.turnsRemaining === 0) {
+    yahtzee.throwsRemainingInTurn = 0;
+    document.getElementById('newGame').style.display = 'inline-block';
+    document.getElementById('roll').style.display = 'none';
+    calculateTotalScore();
+    loadScorecard();
   }
 }
 
@@ -105,9 +125,9 @@ function calculateScores() {
         if (scoreCardRow.scoreMath[0] == 'sum') {
           scoreCardRow.score = sumOfDice(scoreCardRow.scoreMath[1]);
         }
+      } else {
+          scoreCardRow.score = 0;
       }
-    } else {
-      scoreCardRow.score = 0;
     }
   });
   loadScorecard();
@@ -128,18 +148,68 @@ function conditionIsMet(condition) {
     return true;
   }
   if (condition[0] == 'ofAKind') {
-    return ofAKind(condition);
+    return ofAKind(condition[1]);
+  }
+  if (condition[0] == 'fullHouse') {
+    return fullHouse();
   }
   if (condition[0] == 'inARow') {
-    return inARow(condition);
+    return inARow(condition[1]);
   }
   return false;
 }
 
-function ofAKind(condition) {
+function ofAKind(numberToMatch) {
+  values = [0,0,0,0,0,0];
+  yahtzee.dice.forEach(function(die) {
+    values[die.sideUp-1]++;
+  });
+  for (i=0; i<values.length; i++)
+    if (values[i] >= numberToMatch)
+      return true;
   return false;
 }
 
-function inARow(condition) {
-  return false;
+function fullHouse() {
+  values = [0,0,0,0,0,0];
+  yahtzee.dice.forEach(function(die) {
+    values[die.sideUp-1]++;
+  });
+  return (values.includes(2) && values.includes(3));
+}
+
+function inARow(numberToMatch) {
+  values = [0,0,0,0,0,0];
+  yahtzee.dice.forEach(function(die) {
+    values[die.sideUp-1]++;
+  });
+  consecutive = 0;
+  currentStreak = 0;
+  for (i=0; i<values.length; i++) {
+    if (values[i] !== 0) {
+      currentStreak++;
+      if (consecutive < currentStreak)
+        consecutive = currentStreak;
+    } else {
+      currentStreak = 0;
+    }
+  }
+  return consecutive >= numberToMatch;
+}
+
+function calculateTotalScore() {
+  topTotal = 0;
+  bottomTotal = 0;
+  yahtzee.scoreCard.forEach(function(scoreCardRow) {
+    if (scoreCardRow.top)
+      topTotal += scoreCardRow.score;
+    else
+      bottomTotal += scoreCardRow.score;
+  });
+  yahtzee.topSubTotal = topTotal;
+  if (topTotal >= 63)
+    yahtzee.topBonus = 35;
+  else
+    yahtzee.topBonus = 0;
+  yahtzee.totalScore = topTotal + bottomTotal + yahtzee.topBonus;
 }

@@ -1,6 +1,9 @@
 yahtzee = {
   'turnsRemaining' : 13,
   'throwsRemainingInTurn' : 3,
+  'topSubTotal' : '',
+  'topBonus' : '',
+  'totalScore' : '',
   'player' : {
     'name' : 'Bill',
     'avatar' : 'avatar.jpeg'
@@ -106,7 +109,7 @@ yahtzee = {
       'displaySequence' : 8,
       'scoreRecorded' : false,
       'score' : 0,
-      'scoreCondition' : ['ofAKind', 2, 3],
+      'scoreCondition' : ['fullHouse', 2, 3],
       'scoreMath' : ['const', 25]
     },
     {
