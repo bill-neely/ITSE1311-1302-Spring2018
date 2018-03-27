@@ -14,21 +14,21 @@ Please enter the % weight for 'Daily Grades':   20
 Please enter the % weight for 'Quizzes':        30
 Please enter the % weight for 'Tests':          50
 
-R. See the report Card
-Q. Quit
 1. Enter: Daily Grades
 2. Enter: Quizzes
 3. Enter: Tests
+R. See the report Card
+Q. Quit
 Choose an Option:   1
 Please enter assignment name: Week 1 homework
 What grade was earned:  90
 
 
-R. See the report Card
-Q. Quit
 1. Enter: Daily Grades
 2. Enter: Quizzes
 3. Enter: Tests
+R. See the report Card
+Q. Quit
 Choose an Option:   2
 Please enter assignment name: Python Syntax
 What grade was earned:  85
