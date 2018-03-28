@@ -3,8 +3,13 @@ import student
 def showStudent(aStudent):
     print('')
     print('Student Name: ' + aStudent.name)
+    print('')
     for category in aStudent.categories:
-        print('Category: ' + category.name + ' has Weight: ' + str(category.weight))
+        print(category.name + '(' + str(category.weight) + '%)')
+        for assignment in category.assignments:
+            print('  ' + assignment.name + ': ' + str(assignment.grade))
+        print('')
+    print('Final Course Grade: ' + str(theStudent.finalAverage()))
 
 
 studentName = raw_input("Enter the Student's Name: ")
@@ -33,11 +38,18 @@ while keepGoing:
         print(str(index + 1) + '. Enter: ' + category.name)
     print('R. See the Report Card')
     print('Q. Quit')
-    option = raw_input('Choose an Option: ')
-    if option.lower() == 'q':
+    option = raw_input('Choose an Option: ').lower()
+    if option == 'q':
         keepGoing = False
-    #else:
-        # DO the option
+    elif option == 'r':
+        showStudent(theStudent)
+    else:
+        catNumber = int(option)
+        if catNumber <= len(theStudent.categories):
+            assignmentName = raw_input("Please enter the assignment Name: ")
+            grade = raw_input("What grade was earned: ")
+            theStudent.categories[catNumber-1].addAssignment(assignmentName, grade)
+
 
 
 showStudent(theStudent)

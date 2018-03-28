@@ -15,3 +15,9 @@ class Student:
         for category in self.categories:
             total += category.weight
         return total == 100
+
+    def finalAverage(self):
+        final = 0
+        for category in self.categories:
+            final += category.categoryAverage()
+        return final
