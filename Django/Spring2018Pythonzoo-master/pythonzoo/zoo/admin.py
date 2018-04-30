@@ -6,7 +6,7 @@ from .models import Zoo, Exhibit
 
 
 class ZooAdmin(admin.ModelAdmin):
-	list_display = ('id', 'name')
+	list_display = ('id', 'name', 'logoFileName', 'get_absolute_url')
 
 admin.site.register(Zoo, ZooAdmin)
 
