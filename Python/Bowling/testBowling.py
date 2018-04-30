@@ -7,9 +7,9 @@ def testCorrectNumberOfRolls(testName, frameNumber, rolls, expectedNumberOfRolls
     for roll in rolls:
         allowed = aFrame.addRoll(roll)
     if len(aFrame.rolls) == expectedNumberOfRolls:
-        print 'PASS: ' + testName
+        print('PASS: ' + testName)
     else:
-        print 'FAIL: ' + testName + ' expected ' + str(expectedNumberOfRolls) + ' but got ' + str(len(aFrame.rolls))
+        print('FAIL: ' + testName + ' expected ' + str(expectedNumberOfRolls) + ' but got ' + str(len(aFrame.rolls)))
 
 testCorrectNumberOfRolls("Allow two in frame 1", 1, [2, 3], 2)
 testCorrectNumberOfRolls("Strike ends frame 1, test 1", 1, [10], 1)
@@ -26,9 +26,9 @@ def testIsSpare(testName, frameNumber, rolls, expectedSpare):
     for roll in rolls:
         aFrame.addRoll(roll)
     if aFrame.isSpare() == expectedSpare:
-        print 'PASS: ' + testName
+        print('PASS: ' + testName)
     else:
-        print 'FAIL: ' + testName + ' expected ' + str(expectedSpare) + ' but got ' + str(aFrame.isSpare())
+        print('FAIL: ' + testName + ' expected ' + str(expectedSpare) + ' but got ' + str(aFrame.isSpare()))
 
 testIsSpare("Not a spare - Frame 1", 1, [2,3], False)
 testIsSpare("Is not a spare - Frame 7", 7, [10], False)
@@ -43,9 +43,9 @@ def testIsStrike(testName, frameNumber, rolls, expectedStrike):
     for roll in rolls:
         aFrame.addRoll(roll)
     if aFrame.isStrike() == expectedStrike:
-        print 'PASS: ' + testName
+        print('PASS: ' + testName)
     else:
-        print 'FAIL: ' + testName + ' expected ' + str(expectedStrike) + ' but got ' + str(aFrame.isStrike())
+        print('FAIL: ' + testName + ' expected ' + str(expectedStrike) + ' but got ' + str(aFrame.isStrike()))
 
 testIsStrike("Not a strike - Frame 1", 1, [2,3], False)
 testIsStrike("Not a strike - Frame 1", 1, [1,9], False)
@@ -61,9 +61,9 @@ def testFinalScore(testName, rolls, expectedScore):
     for roll in rolls:
         aGame.addRoll(roll)
     if aGame.finalScore() == expectedScore:
-        print 'PASS: ' + testName
+        print('PASS: ' + testName)
     else:
-        print 'FAIL: ' + testName + ' expected ' + str(expectedScore) + ' but got ' + str(aGame.finalScore())
+        print('FAIL: ' + testName + ' expected ' + str(expectedScore) + ' but got ' + str(aGame.finalScore()))
 
 
 game1rolls = [4,3, 6,2, 4,2, 8,1, 4,5, 6,2, 7,2, 9,0, 0,5, 6,3]
