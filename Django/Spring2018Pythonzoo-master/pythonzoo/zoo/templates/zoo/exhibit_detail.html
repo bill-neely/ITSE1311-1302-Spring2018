@@ -4,4 +4,14 @@
 
 <h1>Exhbit Detail for {{ exhibit.id }} - {{ exhibit.name }} in {{ exhibit.zoo.name }}</h1>
 
+<h1>Neighbors</h1>
+
+
+<h1>Animals</h1>
+
+{% for animal in exhibit.animal_set.all %}
+  <p>{{ animal.name }}</p>
+{% endfor %}
+
+
 {% endblock %}

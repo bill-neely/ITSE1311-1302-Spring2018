@@ -39,3 +39,18 @@ class Animal(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('animalDetail', args=[str(self.id)])
+
+class ExhibitNeighbor(models.Model):
+	fromExhibit = models.ForeignKey('Exhibit', on_delete=models.SET_NULL, null=True, related_name='fromExhibit')
+	toExhibit = models.ForeignKey('Exhibit', on_delete=models.SET_NULL, null=True, related_name='toExhibit')
+	CARDINAL = (
+		('n', 'North'),
+		('s', 'South'),
+		('w', 'West'),
+		('e', 'East'),
+		('nw', 'Northwest'),
+		('ne', 'Northeast'),
+		('sw', 'Southwest'),
+		('se', 'Southeast')
+	)
+	direction = models.CharField(max_length=2, choices=CARDINAL, help_text="Enter Direction", null=True, blank=True)
