@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Zoo List</h1>
+
+{% for zoo in zoo_list %}
+  <p>{{ zoo.name }}</p>
+{% endfor %}
+
+{% endblock %}

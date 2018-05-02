@@ -5,4 +5,8 @@
 <h1>Animal Detail for {{ animal.id }} - {{ animal.name }} in
   {{ animal.exhibit.name }} in {{ animal.exhibit.zoo.name }}</h1>
 
+<h1>Image</h1>
+{% load static %}
+<img src="{% static animal.imageFileName %}">
+
 {% endblock %}

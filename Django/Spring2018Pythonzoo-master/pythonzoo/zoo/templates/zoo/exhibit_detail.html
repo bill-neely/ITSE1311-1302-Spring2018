@@ -6,6 +6,10 @@
 
 <h1>Neighbors</h1>
 
+{% for neighbor in exhibit.fromExhibit.all %}
+  <p>{{ neighbor.direction }} to {{ neighbor.toExhibit.name }}
+{% endfor %}
+
 
 <h1>Animals</h1>
 
